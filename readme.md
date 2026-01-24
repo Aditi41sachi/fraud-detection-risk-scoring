@@ -1,116 +1,133 @@
 # Fraud Detection Project
 
-This project implements a **fraud detection system** using machine learning models. It includes data preprocessing, handling class imbalance, model training with hyperparameter tuning, evaluation, and visualization of results.
+## Overview
+
+This project implements an end-to-end **fraud detection machine learning pipeline**, covering data exploration, feature engineering, model training, evaluation, and final model selection. The goal is to identify fraudulent transactions using supervised learning techniques and to determine an optimal decision threshold for classification.
+
+The project is structured as a series of Jupyter notebooks that follow a logical workflow, making it suitable for academic review, technical assessment, or portfolio demonstration.
 
 ---
 
-## 📂 Project Structure
+## Project Structure
 
-fraud_detection_project/
+```
+fraud_detection/
 │
-├─ fraud_data - Sheet 1.csv # Dataset file
-├─ best_xgb_model.pkl # Saved XGBoost model
-├─ best_rf_model.pkl # Saved Random Forest model
-└─ README.md # Project documentation
-
-
-
----
-
-## 🧰 Libraries Used
-
-- `pandas` – Data manipulation
-- `numpy` – Numerical computations
-- `matplotlib` & `seaborn` – Visualization
-- `scikit-learn` – Preprocessing, model building, evaluation
-- `xgboost` – Gradient boosting model
-- `imblearn` – SMOTE for handling class imbalance
-- `joblib` – Model serialization
+├── fraud_data - Sheet 1.csv        # Raw dataset
+│
+├── 01_data_exploration.ipynb       # Initial data analysis and cleaning
+├── 02_business_insights.ipynb      # Exploratory insights and observations
+├── 03_feature_engineering.ipynb    # Feature creation and preprocessing
+├── 04_model_training.ipynb         # Model training and comparison
+├── 05_model_evaluation.ipynb       # Evaluation, threshold tuning, final selection
+│
+├── models/
+│   ├── best_logistic_model.pkl     # Trained Logistic Regression model
+│   └── best_xgb_model.pkl          # Trained XGBoost model (final model)
+│
+└── final_threshold.txt             # Selected probability threshold for classification
+```
 
 ---
 
-## ⚙️ Steps Implemented
+## Dataset
 
-### 1. Load Dataset
-The dataset `fraud_data - Sheet 1.csv` contains transactions with the target column `IsFraud`.
+* **File:** `fraud_data - Sheet 1.csv`
+* The dataset contains transaction-level data with a binary target indicating whether a transaction is fraudulent.
+* Preprocessing steps and feature definitions are documented within the notebooks.
 
-```python
-X = df.drop(columns=["TransactionID", "IsFraud"])
-y = df["IsFraud"]
+> Note: A formal data dictionary is not provided; feature meanings can be inferred from the exploration and feature engineering notebooks.
 
-2. Preprocessing
-Numerical features: missing values imputed with median and scaled.
+---
 
-Categorical features: missing values imputed with most frequent value and encoded using one-hot encoding.
+## Workflow
 
-Combined using ColumnTransformer.
+The notebooks should be run in the following order:
 
-3. Train-Test Split
-Split dataset into training (80%) and testing (20%) sets.
+1. **01_data_exploration.ipynb**
 
-Stratified split to maintain class distribution.
+   * Data loading
+   * Missing value analysis
+   * Basic statistics and visualizations
 
-4. Handle Class Imbalance
-Applied SMOTE to oversample minority class in the training set.
+2. **02_business_insights.ipynb**
 
-5. Model Definition & Hyperparameter Tuning
-Logistic Regression
+   * Exploratory findings
+   * Fraud patterns and observations
 
-SVM
+3. **03_feature_engineering.ipynb**
 
-Random Forest with RandomizedSearchCV
+   * Feature transformation
+   * Encoding and scaling
+   * Train/test split
 
-XGBoost with RandomizedSearchCV
+4. **04_model_training.ipynb**
 
-6. Model Training & Evaluation
-Evaluated on Precision, Recall, F1-Score, ROC-AUC
+   * Model training (Logistic Regression, XGBoost)
+   * Hyperparameter tuning
 
-Confusion matrices plotted for each model.
+5. **05_model_evaluation.ipynb**
 
-ROC curves compared across all models.
+   * Performance comparison
+   * Precision/Recall trade-off
+   * Threshold optimization
+   * Final model selection
 
-7. Save Best Models
-Best Random Forest and XGBoost models are saved as .pkl files for future use.
+---
 
-## 📊 Results
-Models are compared using metrics and visualizations.
+## Final Model
 
-Bar chart and ROC curve plots provide an overview of model performance.
+* **Selected Model:** XGBoost Classifier
+* **Saved Model:** `models/best_xgb_model.pkl`
+* **Decision Threshold:** Stored in `final_threshold.txt`
 
-##💡 Key Features
-Automated preprocessing pipeline
+Predictions should be generated as probabilities and converted to class labels using the saved threshold.
 
-SMOTE for class imbalance
+---
 
-Hyperparameter tuning for Random Forest and XGBoost
+## How to Use the Model
 
-Evaluation using multiple metrics and visualizations
+Example workflow:
 
-Model persistence with joblib
+1. Load the trained model from `models/best_xgb_model.pkl`
+2. Prepare input data using the same features and preprocessing steps
+3. Generate predicted probabilities
+4. Apply the threshold from `final_threshold.txt` to classify transactions
 
-## 🔗 How to Run
-Clone the repository and place fraud_data - Sheet 1.csv in the folder.
+---
 
-Install dependencies:
+## Requirements
 
-bash
-Copy code
-pip install pandas numpy matplotlib seaborn scikit-learn xgboost imbalanced-learn joblib
+This project requires Python and common data science libraries. A sample dependency list:
 
+* pandas
+* numpy
+* scikit-learn
+* xgboost
+* matplotlib
+* seaborn
 
-## ⚠️ Notes
-Ensure the dataset columns match the code (TransactionID, IsFraud, Location, MerchantCategory, Amount, Time, CardHolderAge).
+> It is recommended to create a virtual environment and install dependencies before running the notebooks.
 
-Hyperparameter tuning may take time depending on dataset size and computing resources.
+---
 
-SMOTE is applied only to the training set to avoid data leakage.
+## Notes and Limitations
 
-## 📝 Author
-Your Name – GitHub Profile
+* Models are saved using Python pickle files, which are dependent on library versions.
+* The project is notebook-driven and intended for analysis and demonstration purposes.
+* The processed datasets are included for convenience and reproducibility.
 
-## 📌 References
-Scikit-learn Documentation
+---
 
-XGBoost Documentation
+## Future Improvements
 
-imbalanced-learn Documentation
+* Add a formal data dictionary
+* Provide a standalone inference script
+* Add dependency pinning via `requirements.txt`
+* Improve model deployment readiness
+
+---
+
+## Author
+
+*Prepared as a fraud detection machine learning project for analysis, evaluation, and demonstration purposes.*
