@@ -4,6 +4,7 @@
 ![License](https://img.shields.io/badge/License-MIT-yellow.svg)
 ![Machine Learning](https://img.shields.io/badge/Machine%20Learning-Fraud%20Detection-green)
 ![Workflow](https://img.shields.io/badge/Workflow-Jupyter%20Notebooks-orange)
+![Pipeline](https://img.shields.io/badge/Pipeline-End--to--End-blueviolet)
 ![Dataset](https://img.shields.io/badge/Dataset-Tabular%20Data-lightgrey)
 
 
