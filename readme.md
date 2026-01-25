@@ -1,9 +1,10 @@
 # 🕵️ Fraud Detection Project
 
 ![Python](https://img.shields.io/badge/Python-3.8%2B-blue)
+![License](https://img.shields.io/badge/License-MIT-yellow.svg)
 ![Machine Learning](https://img.shields.io/badge/Machine%20Learning-Fraud%20Detection-green)
 ![Status](https://img.shields.io/badge/Status-Completed-success)
-![License](https://img.shields.io/badge/License-Educational-lightgrey)
+
 
 ## 📌 Overview
 
@@ -27,14 +28,10 @@ fraud_detection/
 └── fraud_data - Sheet 1.csv        # Raw dataset
 ```
 
----
-
-> 📌 **Note**  
-> The following folders will be **automatically created after running the notebooks**:
-> - `processed/` → train/test datasets  
-> - `models/` → trained models and selected decision threshold  
-
----
+ 📌 **Note**  
+ The following folders will be **automatically created after running the notebooks**:
+ - `processed/` → train/test datasets  
+ - `models/` → trained models and selected decision threshold  
 
 ## 📊 Dataset
 - **File:** `fraud_data - Sheet 1.csv`
@@ -46,7 +43,6 @@ fraud_detection/
   - Real-world noise and outliers
 
 The dataset is used **as-is for EDA** and then processed during feature engineering.
----
 
 ## 🧠 Workflow
 
@@ -81,8 +77,6 @@ The notebooks should be run in the following order:
    * Threshold optimization
    * Final model selection
 
----
-
 ## 📊 Models
 The project trains and evaluates multiple models:
 - **Logistic Regression**
@@ -90,8 +84,6 @@ The project trains and evaluates multiple models:
 - **XGBoost (Final Selected Model)**
 
 After execution, trained models are saved locally along with the optimized decision threshold for fraud detection.
-
----
 
 ## ⚙️ Installation
 
@@ -113,7 +105,6 @@ pip install pandas numpy matplotlib seaborn scikit-learn xgboost jupyter
 pip install -r requirements.txt
 ```
 
----
 
 ## ▶️ How to Run the Project
 
@@ -147,15 +138,12 @@ After successful execution:
 * Processed datasets are saved in `processed/`
 * Trained models and the optimized threshold are saved in `models/`
 
----
 
 ## 📈 Results
 
 * **XGBoost** achieved the best overall performance.
 * Decision threshold tuning significantly improved fraud recall.
 * The final model balances fraud detection effectiveness with false-positive control.
-
----
 
 ## ⚡ For Experienced Users
 
@@ -167,8 +155,6 @@ If you are already familiar with ML workflows, you can:
 * Integrate trained models into downstream applications (API, batch scoring)
 * Replace the dataset with a new fraud dataset (same schema required)
 
----
-
 ## 🚀 Future Improvements
 
 * Model monitoring and retraining for data drift
@@ -177,18 +163,6 @@ If you are already familiar with ML workflows, you can:
 * Experiment tracking with MLflow
 * Pipeline automation using CI/CD
 
----
-
-## 📝 Author
-
-Prepared as a fraud detection machine learning project for analysis, evaluation, and demonstration purposes.
-
----
-
 ## 📄 License
 
-This project is intended for **educational and research purposes only**.
-
----
-
-*Prepared as a fraud detection machine learning project for analysis, evaluation, and demonstration purposes.*
+This project is licensed under the MIT License – see the LICENSE file for details.
