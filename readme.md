@@ -1,4 +1,4 @@
-# 🕵️ Fraud Detection Project
+# Fraud Detection Project
 
 ![Python](https://img.shields.io/badge/Python-3.8%2B-blue)
 ![License](https://img.shields.io/badge/License-MIT-yellow.svg)
@@ -12,7 +12,16 @@ This project implements an end-to-end **fraud detection machine learning pipelin
 
 The project is structured as a series of Jupyter notebooks that follow a logical workflow, making it suitable for academic review, technical assessment, or portfolio demonstration.
 
----
+## ✨ Features
+
+- End-to-end machine learning pipeline for fraud detection  
+- Exploratory Data Analysis (EDA) with visual insights  
+- Business-oriented fraud pattern analysis  
+- Feature engineering including encoding and scaling  
+- Training and comparison of multiple machine learning models  
+- Decision threshold optimization for precision–recall trade-off  
+- Persistent storage of trained models and optimized thresholds  
+- Modular, notebook-driven workflow for clarity and reproducibility  
 
 ## 📂 Project Structure
 
@@ -26,9 +35,24 @@ fraud_detection/
 ├── 05_model_evaluation.ipynb       # Evaluation, threshold tuning, final selection
 │
 └── fraud_data - Sheet 1.csv        # Raw dataset
+
 ```
 
- 📌 **Note**  
+## 📓 Notebook Workflow
+
+The project follows a structured, notebook-based workflow:
+
+| Step | Notebook | Description |
+|------|----------|-------------|
+| 1 | `01_data_exploration.ipynb` | Load data, inspect structure, handle missing values, and perform initial visual analysis |
+| 2 | `02_business_insights.ipynb` | Analyze fraud patterns and extract key business insights |
+| 3 | `03_feature_engineering.ipynb` | Perform feature transformations, encoding, scaling, and train-test split |
+| 4 | `04_model_training.ipynb` | Train and tune machine learning models (Logistic Regression, Random Forest, XGBoost) |
+| 5 | `05_model_evaluation.ipynb` | Compare models, evaluate metrics, optimize decision threshold, and select the final model |
+
+---
+
+## 📌 **Note**  
  The following folders will be **automatically created after running the notebooks**:
  - `processed/` → train/test datasets  
  - `models/` → trained models and selected decision threshold  
@@ -44,39 +68,6 @@ fraud_detection/
 
 The dataset is used **as-is for EDA** and then processed during feature engineering.
 
-## 🧠 Workflow
-
-The notebooks should be run in the following order:
-
-1. **01_data_exploration.ipynb**
-
-   * Data loading
-   * Missing value analysis
-   * Basic statistics and visualizations
-
-2. **02_business_insights.ipynb**
-
-   * Exploratory findings
-   * Fraud patterns and observations
-
-3. **03_feature_engineering.ipynb**
-
-   * Feature transformation
-   * Encoding and scaling
-   * Train/test split
-
-4. **04_model_training.ipynb**
-
-   * Model training (Logistic Regression, XGBoost)
-   * Hyperparameter tuning
-
-5. **05_model_evaluation.ipynb**
-
-   * Performance comparison
-   * Precision/Recall trade-off
-   * Threshold optimization
-   * Final model selection
-
 ## 📊 Models
 The project trains and evaluates multiple models:
 - **Logistic Regression**
@@ -87,19 +78,19 @@ After execution, trained models are saved locally along with the optimized decis
 
 ## ⚙️ Installation
 
-### Prerequisites
+1. **Prerequisites**
 
 * Python **3.8+**
 * `pip` or `conda`
 * Jupyter Notebook or JupyterLab
 
-### Install Dependencies
+2.**Install Dependencies**
 
 ```bash
 pip install pandas numpy matplotlib seaborn scikit-learn xgboost jupyter
 ```
 
-### Using `requirements.txt`
+3.**Using `requirements.txt`**
 
 ```bash
 pip install -r requirements.txt
@@ -108,20 +99,20 @@ pip install -r requirements.txt
 
 ## ▶️ How to Run the Project
 
-### Step 1: Clone the Repository
+**Step 1: Clone the Repository**
 
 ```bash
 git clone <repository-url>
 cd fraud_detection
 ```
 
-### Step 2: Start Jupyter Notebook
+**Step 2: Start Jupyter Notebook**
 
 ```bash
 jupyter notebook
 ```
 
-### Step 3: Run Notebooks in Order
+**Step 3: Run Notebooks in Order**
 
 Execute the notebooks sequentially:
 
@@ -131,7 +122,7 @@ Execute the notebooks sequentially:
 4. `04_model_training.ipynb`
 5. `05_model_evaluation.ipynb`
 
-### Step 4: Outputs
+**Step 4: Outputs**
 
 After successful execution:
 
