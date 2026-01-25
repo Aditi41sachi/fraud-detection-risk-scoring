@@ -3,7 +3,8 @@
 ![Python](https://img.shields.io/badge/Python-3.8%2B-blue)
 ![License](https://img.shields.io/badge/License-MIT-yellow.svg)
 ![Machine Learning](https://img.shields.io/badge/Machine%20Learning-Fraud%20Detection-green)
-![Status](https://img.shields.io/badge/Status-Completed-success)
+![Workflow](https://img.shields.io/badge/Workflow-Jupyter%20Notebooks-orange)
+![Dataset](https://img.shields.io/badge/Dataset-Tabular%20Data-lightgrey)
 
 
 ## 📌 Overview
