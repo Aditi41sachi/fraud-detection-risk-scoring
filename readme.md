@@ -70,12 +70,12 @@ The project follows a structured, notebook-based workflow:
 
 ---
 
-> ## 📌 **Note**  
+> **Note**  
 >The following files and folders are created automatically when the notebooks are executed and are intentionally excluded from version control:
 >- `processed/` – train/test datasets and engineered features
 >- `models/` – trained models and optimized decision threshold
 >- `fraud_predictions.csv` – final prediction, risk scoring, and evaluation dataset
-
+>
 >This keeps the repository clean while ensuring full reproducibility.
 
 ## 📊 Dataset
@@ -193,8 +193,7 @@ Execute the notebooks sequentially:
 After successful execution:
 * Processed datasets are saved in `processed/`
 * Trained models and the optimized threshold are saved in `models/`
-* fraud_predictions.csv is generated as the final prediction, risk scoring, and evaluation dataset`
-
+* * `fraud_predictions.csv` is generated as the final prediction, risk scoring, and evaluation dataset
 
 ## 📈 Results
 
