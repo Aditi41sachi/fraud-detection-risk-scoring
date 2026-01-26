@@ -54,6 +54,7 @@ fraud_detection/
 └── fraud_data - Sheet 1.csv        # Raw dataset
 
 ```
+---
 
 ## 📓 Notebook Workflow
 
@@ -69,13 +70,13 @@ The project follows a structured, notebook-based workflow:
 
 ---
 
-## 📌 **Note**  
-The following files and folders are created automatically when the notebooks are executed and are intentionally excluded from version control:
-- `processed/` – train/test datasets and engineered features
-- `models/` – trained models and optimized decision threshold
-- `fraud_predictions.csv` – final prediction, risk scoring, and evaluation dataset
+> ## 📌 **Note**  
+>The following files and folders are created automatically when the notebooks are executed and are intentionally excluded from version control:
+>- `processed/` – train/test datasets and engineered features
+>- `models/` – trained models and optimized decision threshold
+>- `fraud_predictions.csv` – final prediction, risk scoring, and evaluation dataset
 
-This keeps the repository clean while ensuring full reproducibility.
+>This keeps the repository clean while ensuring full reproducibility.
 
 ## 📊 Dataset
 - **File:** `fraud_data - Sheet 1.csv`
