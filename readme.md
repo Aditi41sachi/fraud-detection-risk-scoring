@@ -9,9 +9,24 @@
 
 ## 📌 Overview
 
-This project implements an end-to-end **fraud detection machine learning pipeline**, covering data exploration, feature engineering, model training, evaluation, and final model selection. The goal is to identify fraudulent transactions using supervised learning techniques and to determine an optimal decision threshold for classification.
+This project implements an end-to-end **fraud detection machine learning pipeline**, covering data exploration, feature engineering, model training, evaluation, and final model selection. The objective is to identify fraudulent transactions using supervised learning techniques and to determine an optimal decision threshold that balances fraud detection effectiveness with false-positive control.
 
-The project is structured as a series of Jupyter notebooks that follow a logical workflow, making it suitable for academic review, technical assessment, or portfolio demonstration.
+The project is structured as a series of modular Jupyter notebooks that follow a clear, logical workflow, emphasizing reproducibility, clarity, and real‑world machine learning practices.
+
+```
+Raw Transaction Data
+        ↓
+Exploratory Data Analysis (EDA)
+        ↓
+Business-Oriented Insights
+        ↓
+Feature Engineering
+        ↓
+Model Training & Evaluation
+        ↓
+Prediction & Risk Scoring Dataset
+```
+---
 
 ## ✨ Features
 
@@ -21,7 +36,8 @@ The project is structured as a series of Jupyter notebooks that follow a logical
 - Feature engineering including encoding and scaling  
 - Training and comparison of multiple machine learning models  
 - Decision threshold optimization for precision–recall trade-off  
-- Persistent storage of trained models and optimized thresholds  
+- Persistent storage of trained models and optimized thresholds
+- Risk scoring and error-based evaluation (TP / FP / FN / TN)
 - Modular, notebook-driven workflow for clarity and reproducibility  
 
 ## 📂 Project Structure
@@ -54,9 +70,12 @@ The project follows a structured, notebook-based workflow:
 ---
 
 ## 📌 **Note**  
- The following folders will be **automatically created after running the notebooks**:
- - `processed/` → train/test datasets  
- - `models/` → trained models and selected decision threshold  
+The following files and folders are created automatically when the notebooks are executed and are intentionally excluded from version control:
+- `processed/` – train/test datasets and engineered features
+- `models/` – trained models and optimized decision threshold
+- `fraud_predictions.csv` – final prediction, risk scoring, and evaluation dataset
+
+This keeps the repository clean while ensuring full reproducibility.
 
 ## 📊 Dataset
 - **File:** `fraud_data - Sheet 1.csv`
@@ -66,8 +85,19 @@ The project follows a structured, notebook-based workflow:
   - Class imbalance
   - Mixed numerical and categorical features
   - Real-world noise and outliers
-
 The dataset is used **as-is for EDA** and then processed during feature engineering.
+
+## 📊 Prediction Dataset (`fraud_predictions.csv`)
+- The prediction dataset is generated after model evaluation and contains **only test-set predictions (unseen data)** to ensure unbiased evaluation and avoid data leakage.
+- It includes:
+   - Original feature values
+   - Actual fraud labels
+   - Predicted fraud labels
+   - Fraud probability scores
+   - Risk level classification
+   - Evaluation results (TP / FP / FN / TN)
+
+> **Note:** The prediction dataset has fewer records than the raw dataset because it represents the **test split only**, reflecting realistic model performance.
 
 ## 📊 Models
 The project trains and evaluates multiple models:
@@ -75,7 +105,41 @@ The project trains and evaluates multiple models:
 - **Random Forest**
 - **XGBoost (Final Selected Model)**
 
+Model selection criteria included:
+- Precision, recall, F1-score, ROC-AUC
+- Business-oriented cost optimization
+
 After execution, trained models are saved locally along with the optimized decision threshold for fraud detection.
+
+## 📈 Model Evaluation & Analysis
+
+Model evaluation focuses on both statistical performance and business impact:
+
+* Confusion matrix analysis (TP, FP, FN, TN)
+* False positive vs false negative tradeoff analysis
+* Fraud probability–based risk scoring
+* Error distribution across transaction attributes (e.g., location, category)
+
+All evaluation insights are embedded directly in `fraud_predictions.csv`, enabling transparent downstream analysis.
+
+## 🎯 Risk Segmentation
+
+Each transaction is categorized into a risk level based on predicted fraud probability:
+
+* **Low Risk**
+* **Medium Risk**
+* **High Risk**
+
+This segmentation supports business-friendly interpretation and prioritization of fraud investigation efforts.
+
+## 📊 Analytical & Dashboard Readiness
+
+The prediction dataset is designed as a **single, clean analytical table** suitable for visualization or reporting tools. It supports:
+
+* Confusion matrix visualization
+* FP vs FN tradeoff analysis
+* Risk-level vs error analysis
+* Location- or category-based error distribution
 
 ## ⚙️ Installation
 
@@ -126,9 +190,9 @@ Execute the notebooks sequentially:
 **Step 4: Outputs**
 
 After successful execution:
-
 * Processed datasets are saved in `processed/`
 * Trained models and the optimized threshold are saved in `models/`
+* fraud_predictions.csv is generated as the final prediction, risk scoring, and evaluation dataset`
 
 
 ## 📈 Results
