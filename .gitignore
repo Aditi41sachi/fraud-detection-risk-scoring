@@ -8,7 +8,7 @@ processed/
 *.pkl
 *.joblib
 *.txt
--
+
 # Generated datasets
 fraud_predictions.csv
 
