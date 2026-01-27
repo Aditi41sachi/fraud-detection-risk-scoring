@@ -8,7 +8,7 @@ processed/
 *.pkl
 *.joblib
 *.txt
-
+-
 # Generated datasets
 fraud_predictions.csv
 
@@ -18,6 +18,3 @@ fraud_predictions.csv
 # OS files
 .DS_Store
 Thumbs.db
-
-
-
