@@ -98,7 +98,8 @@ The dataset is used **as-is for EDA** and then processed during feature engineer
    - Risk level classification
    - Evaluation results (TP / FP / FN / TN)
 
-> **Note:** The prediction dataset has fewer records than the raw dataset because it represents the **test split only**, reflecting realistic model performance.
+> **Note:**
+> The prediction dataset has fewer records than the raw dataset because it represents the **test split only**, reflecting realistic model performance.
 
 ## 📊 Models
 The project trains and evaluates multiple models:
