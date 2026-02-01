@@ -24,7 +24,7 @@ Feature Engineering
         ↓
 Model Training & Evaluation
         ↓
-Prediction & Risk Scoring Dataset
+      Output 
 ```
 ---
 
@@ -74,7 +74,6 @@ The project follows a structured, notebook-based workflow:
 >The following files and folders are created automatically when the notebooks are executed and are intentionally excluded from version control:
 >- `processed/` – train/test datasets and engineered features
 >- `models/` – trained models and optimized decision threshold
->- `fraud_predictions.csv` – final prediction, risk scoring, and evaluation dataset
 >
 >This keeps the repository clean while ensuring full reproducibility.
 
@@ -87,19 +86,6 @@ The project follows a structured, notebook-based workflow:
   - Mixed numerical and categorical features
   - Real-world noise and outliers
 The dataset is used **as-is for EDA** and then processed during feature engineering.
-
-## 📊 Prediction Dataset (`fraud_predictions.csv`)
-- The prediction dataset is generated after model evaluation and contains **only test-set predictions (unseen data)** to ensure unbiased evaluation and avoid data leakage.
-- It includes:
-   - Original feature values
-   - Actual fraud labels
-   - Predicted fraud labels
-   - Fraud probability scores
-   - Risk level classification
-   - Evaluation results (TP / FP / FN / TN)
-
-> **Note:**
-> The prediction dataset has fewer records than the raw dataset because it represents the **test split only**, reflecting realistic model performance.
 
 ## 📊 Models
 The project trains and evaluates multiple models:
@@ -136,12 +122,7 @@ This segmentation supports business-friendly interpretation and prioritization o
 
 ## 📊 Analytical & Dashboard Readiness
 
-The prediction dataset is designed as a **single, clean analytical table** suitable for visualization or reporting tools. It supports:
-
-* Confusion matrix visualization
-* FP vs FN tradeoff analysis
-* Risk-level vs error analysis
-* Location- or category-based error distribution
+Analyzes 500 transactions to uncover fraud patterns across merchant categories, customer age groups, locations, and risk levels. With a 5% fraud rate (27 cases), fraud is most prominent in Groceries and Clothing, concentrated among customers aged 25–59 and high-risk locations such as Miami and New York. Fraudulent activity typically involves moderate transaction amounts, emphasizing the need for multi-feature risk scoring.
 
 ## ⚙️ Installation
 
@@ -194,7 +175,6 @@ Execute the notebooks sequentially:
 After successful execution:
 * Processed datasets are saved in `processed/`
 * Trained models and the optimized threshold are saved in `models/`
-* * `fraud_predictions.csv` is generated as the final prediction, risk scoring, and evaluation dataset
 
 ## 📈 Results
 
